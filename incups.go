@@ -43,12 +43,12 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println(dayOne.Year)
-	errTwo := dayOne.SetMonth(11)
+	errTwo := dayOne.SetMonth(13)
 	if errTwo != nil {
 		log.Fatal(errTwo)
 	}
 	fmt.Println(dayOne.Month)
-	errTree := dayOne.SetDay(2)
+	errTree := dayOne.SetDay(222)
 	if errTree != nil {
 		log.Fatal(errTree)
 	}
