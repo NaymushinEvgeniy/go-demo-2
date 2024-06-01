@@ -9,7 +9,7 @@ type MyType struct {
 type EmbeddedType string
 
 func (e EmbeddedType) ExportedMethod() {
-	fmt.Println(" Hi from ExportedMethod on EmbeddedType")
+	fmt.Println(" Hi from ExportedMethod on EmbeddedType!")
 }
 
 func (e EmbeddedType) unexportedMethod() {}
