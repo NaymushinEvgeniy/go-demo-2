@@ -26,11 +26,12 @@ func (r Robot) Walk() {
 
 type NoiseMaker interface {
 	MakeSound()
+	//Walk()
 }
 
 func play(n NoiseMaker) {
 	n.MakeSound()
-	// n.Walk()
+	//n.Walk()
 }
 
 func main() {
