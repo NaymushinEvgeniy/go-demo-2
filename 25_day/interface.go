@@ -35,5 +35,8 @@ func play(n NoiseMaker) {
 }
 
 func main() {
-	play(Robot("Botco Ambler"))
+	var noiseMaker NoiseMaker = Robot("Botco Ambler")
+	noiseMaker.MakeSound()
+	var robot Robot = noiseMaker.(Robot)
+	robot.Walk()
 }
