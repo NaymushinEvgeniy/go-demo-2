@@ -42,9 +42,11 @@ func GetFloats(fileName string) ([]float64, error) {
 }
 
 func main() {
-	entry, err := GetFloats("test.txt")
+	entrys, err := GetFloats("test.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(entry)
+	for _, entry := range entrys {
+		fmt.Println(entry)
+	}
 }
