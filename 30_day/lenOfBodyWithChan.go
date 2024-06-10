@@ -30,7 +30,7 @@ func main() {
 		go responseSize(url, sizes)
 	}
 
-	for i := 0; i < len(sizes); i++ {
+	for i := 0; i < len(urls); i++ {
 		fmt.Println(<-sizes)
 	}
 }
