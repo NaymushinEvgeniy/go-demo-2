@@ -12,7 +12,7 @@ type Page struct {
 	Size int
 }
 
-func responseSize(url string, channel chan int) {
+func responseSize(url string, channel chan Page) {
 	fmt.Println("Getting", url)
 	response, err := http.Get(url)
 	if err != nil {
@@ -29,15 +29,14 @@ func responseSize(url string, channel chan int) {
 
 func main() {
 	pages := make(chan Page)
-	sizes := make(chan int)
 	urls := []string{"https://example.com/", "https://golang.org/", "https://golang.org/doc"}
 
 	for _, url := range urls {
-		go responseSize(url, sizes)
+		go responseSize(url, pages)
 	}
 
 	for i := 0; i < len(urls); i++ {
-		page <- pages
-		fmt.Printf("%s: %d\n", page.Url, page.Size)
+		page := <-pages
+		fmt.Printf("Lenght of %s is: %d kb\n", page.Url, page.Size)
 	}
 }
