@@ -26,4 +26,7 @@ func main() {
 	executeTmpl("This is dot {{ if . }}Yes is true!{{end}}\n", false)
 	exLoop := "This is loop {{ . }}\n in loop:\n {{ range .}} value: {{.}}\n {{ end}} After loop :{{ . }}\n"
 	executeTmpl(exLoop, []string{"do", "re", "mi"})
+	exLoopPrice := "Prices: \n{{range .}}Price: {{.}}$\n{{end}}"
+	executeTmpl(exLoopPrice, []float64{4.33, 33.23, 3.11})
+	executeTmpl(exLoopPrice, nil)
 }
